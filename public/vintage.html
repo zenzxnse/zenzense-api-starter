@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gramophone Lounge • Vintage Radio</title>
+    <link rel="stylesheet" href="assets/vintage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lora:wght@400;500&family=Cinzel:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Left Sidebar Navbar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>The Gramophone</h1>
+                <p class="tagline">Lounge • Est. 1927</p>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="#" class="nav-item active"><i class="fas fa-home"></i> Home</a>
+                <a href="#" class="nav-item"><i class="fas fa-search"></i> Discover</a>
+                <a href="#" class="nav-item"><i class="fas fa-book"></i> Your Library</a>
+                <a href="#" class="nav-item"><i class="fas fa-radio"></i> Radio</a>
+                <a href="#" class="nav-item"><i class="fas fa-heart"></i> Favorites</a>
+            </nav>
+
+            <div class="playlists">
+                <h3>Your Collections</h3>
+                <a href="#">• Swingin' 1935</a>
+                <a href="#">• Parisian Jazz Nights</a>
+                <a href="#">• Delta Blues Archive</a>
+                <a href="#">• Big Band Legends</a>
+                <a href="#">• Golden Age Crooners</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search artists, records, eras...">
+                </div>
+                <div class="user">
+                    <div class="notification"><i class="fas fa-bell"></i></div>
+                    <div class="profile">ZL</div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+                <h1 class="greeting">Good evening, dear listener</h1>
+                <p class="date">February 14, 1942 • The Golden Age</p>
+
+                <!-- Hero Featured -->
+                <div class="hero">
+                    <div class="hero-content">
+                        <h2>Featured This Week</h2>
+                        <h3>Louis Armstrong & Ella Fitzgerald</h3>
+                        <p>Live at the Cotton Club • 1938 Sessions</p>
+                        <button class="play-btn"><i class="fas fa-play"></i> Play Record</button>
+                    </div>
+                    <div class="hero-image"></div>
+                </div>
+
+                <!-- Recently Played -->
+                <section class="section">
+                    <h2>Jump Back In</h2>
+                    <div class="grid">
+                        <div class="card"><img src="https://picsum.photos/id/1015/300/300" alt=""><div class="info"><h4>Billie Holiday</h4><p>Strange Fruit Sessions</p></div></div>
+                        <div class="card"><img src="https://picsum.photos/id/102/300/300" alt=""><div class="info"><h4>Duke Ellington</h4><p>Take the A Train</p></div></div>
+                        <div class="card"><img src="https://picsum.photos/id/133/300/300" alt=""><div class="info"><h4>Glenn Miller</h4><p>In the Mood</p></div></div>
+                        <div class="card"><img src="https://picsum.photos/id/180/300/300" alt=""><div class="info"><h4>Frank Sinatra</h4><p>1940s Crooner</p></div></div>
+                    </div>
+                </section>
+
+                <!-- Popular Playlists -->
+                <section class="section">
+                    <h2>Popular Playlists</h2>
+                    <div class="grid">
+                        <div class="card"><img src="https://picsum.photos/id/201/300/300" alt=""><div class="info"><h4>Jazz Age Hot Hits</h4><p>1920s Charleston</p></div></div>
+                        <div class="card"><img src="https://picsum.photos/id/211/300/300" alt=""><div class="info"><h4>Big Band Swing</h4><p>1936–1945</p></div></div>
+                        <div class="card"><img src="https://picsum.photos/id/237/300/300" alt=""><div class="info"><h4>Blues from the South</h4><p>Delta Legends</p></div></div>
+                        <div class="card"><img src="https://picsum.photos/id/1005/300/300" alt=""><div class="info"><h4>Cabaret & Moulin Rouge</h4><p>Paris 1928</p></div></div>
+                        <div class="card"><img src="https://picsum.photos/id/866/300/300" alt=""><div class="info"><h4>Hollywood Golden Era</h4><p>Film Soundtracks</p></div></div>
+                    </div>
+                </section>
+
+                <!-- More Content -->
+                <section class="section">
+                    <h2>Discover New Eras</h2>
+                    <div class="grid">
+                        <div class="card"><img src="https://picsum.photos/id/669/300/300" alt=""><div class="info"><h4>1920s Speakeasy Jazz</h4></div></div>
+                        <div class="card"><img src="https://picsum.photos/id/776/300/300" alt=""><div class="info"><h4>1940s Wartime Swing</h4></div></div>
+                        <div class="card"><img src="https://picsum.photos/id/1018/300/300" alt=""><div class="info"><h4>Blues & Gospel</h4></div></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Bottom Player -->
+    <footer class="player">
+        <div class="now-playing">
+            <img src="https://picsum.photos/id/1015/80/80" alt="">
+            <div>
+                <h4>La Vie en Rose</h4>
+                <p>Edith Piaf • 1947</p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button><i class="fas fa-random"></i></button>
+            <button><i class="fas fa-step-backward"></i></button>
+            <button class="play-pause"><i class="fas fa-pause"></i></button>
+            <button><i class="fas fa-step-forward"></i></button>
+            <button><i class="fas fa-redo"></i></button>
+        </div>
+
+        <div class="progress">
+            <span>1:42</span>
+            <div class="bar"><div class="progress-fill"></div></div>
+            <span>3:18</span>
+        </div>
+
+        <div class="volume">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" min="0" max="100" value="70">
+        </div>
+
+        <button class="add-btn">+ Add to Your Vault</button>
+    </footer>
+
+    <div class="vintage-overlay"></div>
+</body>
+</html>

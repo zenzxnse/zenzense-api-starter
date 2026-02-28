@@ -1,0 +1,200 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #0a0503;
+    color: #d4af37;
+    font-family: 'Lora', serif;
+    background-image: 
+        radial-gradient(circle at 15% 85%, rgba(184,134,11,0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 15%, rgba(212,175,55,0.08) 0%, transparent 40%),
+        linear-gradient(180deg, #0f0a05 0%, #050301 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15,8,3,0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 3px double #b8860b;
+    box-shadow: 0 10px 40px rgba(184,134,11,0.35);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.8rem;
+    color: #ffd700;
+    text-shadow: 0 0 20px #b8860b;
+}
+
+.tagline { font-size: 0.9rem; color: #b8860b; margin-top: -8px; font-style: italic; }
+
+.nav-search input {
+    width: 420px;
+    padding: 14px 20px;
+    border-radius: 30px;
+    border: 2px double #b8860b;
+    background: rgba(30,15,5,0.6);
+    color: #d4af37;
+    font-size: 1.1rem;
+}
+
+.nav-actions button {
+    padding: 10px 20px;
+    margin-left: 12px;
+    background: transparent;
+    border: 2px double #b8860b;
+    color: #d4af37;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.premium {
+    background: linear-gradient(45deg, #b8860b, #ffd700);
+    color: #0a0503;
+    font-weight: 700;
+}
+
+.hero {
+    height: 85vh;
+    background: linear-gradient(rgba(10,5,3,0.75), rgba(10,5,3,0.9)), url('https://images.unsplash.com/photo-1511671787214-9f0f1c 0f0f1c') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 6.5rem;
+    color: #ffd700;
+    text-shadow: 0 0 40px #b8860b;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    letter-spacing: 8px;
+    margin-bottom: 1rem;
+}
+
+.section {
+    padding: 80px 5%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 3.8rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #ffd700;
+    text-shadow: 0 0 30px rgba(184,134,11,0.5);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: linear-gradient(145deg, #1c1108, #0f0a05);
+    border: 2px double #b8860b;
+    border-radius: 24px;
+    padding: 1.8rem;
+    transition: all 0.7s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    transform: scaleX(0);
+    transition: transform 0.6s;
+}
+
+.card:hover {
+    transform: translateY(-20px) scale(1.04);
+    box-shadow: 0 40px 80px rgba(184,134,11,0.45);
+}
+
+.card:hover::before { transform: scaleX(1); }
+
+.album {
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(135deg, #333, #111);
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+    background-image: linear-gradient(rgba(212,175,55,0.1), rgba(212,175,55,0.1));
+}
+
+.card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+    color: #ffd700;
+}
+
+.card p {
+    color: #b8860b;
+    font-size: 0.98rem;
+    opacity: 0.85;
+}
+
+/* ==================== ADD SOMETHING FOOTER ==================== */
+.add-footer {
+    background: linear-gradient(180deg, #0f0a05, #050301);
+    padding: 120px 20px 80px;
+    border-top: 4px double #b8860b;
+    text-align: center;
+}
+
+.add-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5.5rem;
+    color: #ffd700;
+    margin-bottom: 1rem;
+}
+
+.ornate-add-btn {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    padding: 24px 80px;
+    background: linear-gradient(45deg, #b8860b, #ffd700);
+    color: #0a0503;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 2rem;
+    box-shadow: 0 15px 40px rgba(184,134,11,0.6);
+    transition: all 0.5s;
+}
+
+.ornate-add-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 25px 60px rgba(184,134,11,0.8);
+}

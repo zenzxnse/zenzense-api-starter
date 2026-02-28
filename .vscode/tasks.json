@@ -1,0 +1,51 @@
+{
+  "version": "2.0.0",
+  "options": {
+    "cwd": "${workspaceFolder}"
+  },
+  "tasks": [
+    {
+      "label": "vcpkg: install (x64-mingw-dynamic)",
+      "type": "shell",
+      "command": "${workspaceFolder}/vcpkg/vcpkg.exe",
+      "args": ["install", "--triplet", "x64-mingw-dynamic"],
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "cmake: configure (mingw64)",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-S", ".",
+        "-B", "build-mingw",
+        "-G", "Ninja",
+        "-DCMAKE_BUILD_TYPE=Debug",
+        "-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+        "-DCMAKE_TOOLCHAIN_FILE=${workspaceFolder}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "-DVCPKG_TARGET_TRIPLET=x64-mingw-dynamic",
+        "-DCMAKE_C_COMPILER=gcc",
+        "-DCMAKE_CXX_COMPILER=g++"
+      ],
+      "problemMatcher": ["$gcc"],
+      "dependsOn": ["vcpkg: install (x64-mingw-dynamic)"],
+      "group": "build"
+    },
+    {
+      "label": "cmake: build (mingw64)",
+      "type": "shell",
+      "command": "cmake",
+      "args": ["--build", "build-mingw", "-j"],
+      "problemMatcher": ["$gcc"],
+      "dependsOn": ["cmake: configure (mingw64)"],
+      "group": "build"
+    },
+    {
+      "label": "run: server",
+      "type": "shell",
+      "command": "${workspaceFolder}/build-mingw/server.exe",
+      "dependsOn": ["cmake: build (mingw64)"],
+      "problemMatcher": []
+    }
+  ]
+}

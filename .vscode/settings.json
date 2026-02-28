@@ -1,0 +1,9 @@
+{
+  "cmake.configureOnOpen": false,
+  "cmake.buildDirectory": "${workspaceFolder}/build-mingw",
+
+  "clangd.arguments": [
+    "--compile-commands-dir=${workspaceFolder}/build-mingw"
+  ],
+  "discord.enabled": false
+}

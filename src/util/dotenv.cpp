@@ -18,30 +18,28 @@ static inline void trim(std::string& s) {
   s.erase(std::find_if(s.rbegin(), s.rend(), notSpace).base(), s.end());
 }
 
-namespace util {
+namespace util::env {
+  void loadDotEnv(const std::string& path) {
+    std::ifstream in(path);
+    if (!in.is_open()) return; 
 
-void loadDotEnv(const std::string& path) {
-  std::ifstream in(path);
-  if (!in.is_open()) return; 
+    std::string line;
+    while (std::getline(in, line)) {
+      trim(line);
+      if (line.empty() || line[0] == '#') continue;
 
-  std::string line;
-  while (std::getline(in, line)) {
-    trim(line);
-    if (line.empty() || line[0] == '#') continue;
+      auto eq = line.find('=');
+      if (eq == std::string::npos) continue;
 
-    auto eq = line.find('=');
-    if (eq == std::string::npos) continue;
+      std::string key = line.substr(0, eq);
+      std::string val = line.substr(eq + 1);
+      trim(key); trim(val);
 
-    std::string key = line.substr(0, eq);
-    std::string val = line.substr(eq + 1);
-    trim(key); trim(val);
+      if (val.size() >= 2 && ((val.front() == '"' && val.back() == '"') || (val.front() == '\'' && val.back() == '\''))) {
+        val = val.substr(1, val.size() - 2);
+      }
 
-    if (val.size() >= 2 && ((val.front() == '"' && val.back() == '"') || (val.front() == '\'' && val.back() == '\''))) {
-      val = val.substr(1, val.size() - 2);
+      if (!key.empty()) setEnv(key, val);
     }
-
-    if (!key.empty()) setEnv(key, val);
   }
-}
-
 }

@@ -1,0 +1,49 @@
+# Build outputs
+/build/
+/build-*/
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+*.ninja
+.ninja_deps
+.ninja_log
+
+# vcpkg (pick what you want)
+vcpkg_installed/
+vcpkg/
+# If you vendor vcpkg as a submodule and want it tracked, remove this:
+# vcpkg/
+
+# Binaries / libs
+*.exe
+*.dll
+*.pdb
+*.obj
+*.o
+*.a
+*.lib
+*.dll.a
+
+# Logs / runtime
+logs/
+*.log
+
+# Env / secrets
+.env
+.env.*
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Notes
+raw.txt
