@@ -2,6 +2,10 @@
 /build/
 /build-*/
 /cmake-build-*/
+/db
+/cmake
+/uploads
+/vcpkg
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
@@ -27,7 +31,7 @@ vcpkg/
 *.dll.a
 
 # Logs / runtime
-logs/
+logs/git 
 *.log
 
 # Env / secrets

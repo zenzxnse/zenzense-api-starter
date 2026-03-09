@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "dependencies": [
     "drogon",
-    "catch2",
-    "cassandra-cpp-driver:x64-windows",
-    "libuv"
+    "catch2"
   ]
 }

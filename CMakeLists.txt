@@ -6,15 +6,9 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# ---- Packages (via vcpkg manifest: vcpkg.json) ----
 find_package(Drogon CONFIG REQUIRED)
 find_package(Catch2 CONFIG REQUIRED)
 
-# Cassandra C++ driver (vcpkg: cassandra-cpp-driver)
-# Depending on port, this is usually Cassandra::cassandra
-find_package(Cassandra CONFIG REQUIRED)
-
-# ---- App target ----
 file(GLOB_RECURSE APP_SOURCES CONFIGURE_DEPENDS
   "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
 )
@@ -27,7 +21,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
   Drogon::Drogon
-  Cassandra::cassandra
 )
 
 if(MSVC)
@@ -36,7 +29,6 @@ else()
   target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic)
 endif()
 
-# ---- Tests ----
 file(GLOB_RECURSE TEST_SOURCES CONFIGURE_DEPENDS
   "${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp"
 )
@@ -52,7 +44,6 @@ if(TEST_SOURCES)
   target_link_libraries(unit_tests PRIVATE
     Catch2::Catch2WithMain
     Drogon::Drogon
-    Cassandra::cassandra
   )
 
   enable_testing()
